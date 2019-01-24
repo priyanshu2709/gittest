@@ -1,0 +1,40 @@
+<aura:component >
+   	<ltng:require styles="/resource/SLDS105/assets/styles/salesforce-lightning-design-system.min.css"/>
+    <fieldset class="slds-form-element">
+  <legend class="slds-form-element__legend slds-form-element__label">Scheduled Day(s)</legend>
+  <div class="slds-form-element__control">
+    <div class="slds-radio--button-group">
+      <span class="slds-button slds-radio--button">
+        <input type="radio" name="radio" id="monday" />
+        <label class="slds-radio--button__label" for="monday">
+          <span class="slds-radio--faux">Mon</span>
+        </label>
+      </span>
+      <span class="slds-button slds-radio--button">
+        <input type="radio" name="radio" id="tuesday" />
+        <label class="slds-radio--button__label" for="tuesday">
+          <span class="slds-radio--faux">Tue</span>
+        </label>
+      </span>
+      <span class="slds-button slds-radio--button">
+        <input type="radio" name="radio" id="wednesday" />
+        <label class="slds-radio--button__label" for="wednesday">
+          <span class="slds-radio--faux">Wed</span>
+        </label>
+      </span>
+      <span class="slds-button slds-radio--button">
+        <input type="radio" name="radio" id="thursday" />
+        <label class="slds-radio--button__label" for="thursday">
+          <span class="slds-radio--faux">Thu</span>
+        </label>
+      </span>
+      <span class="slds-button slds-radio--button">
+        <input type="radio" name="radio" id="friday" />
+        <label class="slds-radio--button__label" for="friday">
+          <span class="slds-radio--faux">Fri</span>
+        </label>
+      </span>
+    </div>
+  </div>
+</fieldset>
+</aura:component>

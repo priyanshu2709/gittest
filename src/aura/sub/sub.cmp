@@ -1,0 +1,3 @@
+<aura:component extends="c:super">
+    <p>sub.cmp description: {!v.description}</p>
+</aura:component>

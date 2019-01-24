@@ -1,0 +1,8 @@
+<!--c:eventBubblingChild-->
+<aura:component >
+    <aura:handler name="bubblingEvent" event="c:customcompevent" action="{!c.handleBubbling}"/>
+
+    <div class="child">
+        {!v.body}
+    </div>
+</aura:component>

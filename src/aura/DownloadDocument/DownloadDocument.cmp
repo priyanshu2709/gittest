@@ -1,0 +1,17 @@
+<aura:component implements="flexipage:availableForAllPageTypes" access="global" controller="DownloadFile">
+    
+    <aura:attribute name="Baseurl" type="String" />
+    
+    <lightning:icon iconName="action:approval" size="large" alternativeText="Download file"/>
+	<ui:button aura:id="button" buttonTitle="GD Engagement Template" 
+               class="button" label="GD Engagement Template" press="{!c.getInput}"/>
+    
+    <ui:button aura:id="button" buttonTitle="Download NDA Template" 
+               class="button" label="Download NDA Template" press="{!c.getInput}"/>
+    
+    <ui:button aura:id="button" buttonTitle="Export Control FAQs" 
+               class="button" label="Export Control FAQs" press="{!c.getInput}"/>
+    
+   
+    
+</aura:component>

@@ -1,0 +1,3 @@
+<aura:event type="COMPONENT" description="Event template" >
+	<aura:attribute name="LeadStatus" type="String"/>
+</aura:event>

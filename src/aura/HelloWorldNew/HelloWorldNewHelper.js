@@ -1,0 +1,5 @@
+({
+	testhelper : function() {
+		
+	}
+})

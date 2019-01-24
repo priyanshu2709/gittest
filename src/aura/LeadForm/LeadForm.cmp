@@ -1,0 +1,4 @@
+<aura:component implements="force:appHostable">
+	<ltng:require styles="/resource/slds090/assets/styles/salesforce-lightning-design-system.min.css"/>
+    <aura:attribute name="expenses" type="Lead[]"/>
+</aura:component>

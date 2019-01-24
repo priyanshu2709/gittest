@@ -1,0 +1,6 @@
+<!-- force:base tokens (SLDS standard tokens) -->
+<aura:tokens >
+  <aura:token name="colorBackground" value="rgb(244, 246, 249)" />
+  <aura:token name="fontFamily" value="'Salesforce Sans', Arial, sans-serif" />
+    <aura:token name="margintop" value="5px"/>
+</aura:tokens>

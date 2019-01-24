@@ -1,0 +1,11 @@
+<apex:page controller="IDOLOnDemandClass1"
+  showheader="false"
+  contentType="application/xml" action="{!processTwilioRequest}">
+  <Response>
+      <Message>
+      Your SMS Message from Twilio was received by SalesForce.
+      {!Twiml}. 
+      Thanks.
+      </Message>
+  </Response>
+</apex:page>

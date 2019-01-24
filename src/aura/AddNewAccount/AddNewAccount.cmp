@@ -1,0 +1,7 @@
+<aura:component >
+	<aura:attribute name="Account" type="Account"/>
+    
+    <h1>Insert New Account</h1>
+    <force:inputField aura:id="AccountName" value="{!v.Account.Name}"/>
+
+</aura:component>

@@ -1,0 +1,4 @@
+<apex:page standardController="Lead" showHeader="false" sidebar="false">
+    <apex:iframe src="https://www.google.com/" id="aa" width="500px" height="300px"/>
+    <apex:canvasApp applicationName="AppUrl"/>
+</apex:page>

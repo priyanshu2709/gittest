@@ -1,0 +1,36 @@
+<aura:component controller="FullCalendarController" implements="force:appHostable">
+    <ltng:require scripts="{!$Resource.jquery}" />
+     <ltng:require scripts="{!join(',',     				 
+                    $Resource.fullcalendar + '/fullcalendar-1.6.4/lib/jquery-ui.custom.min.js',
+					$Resource.fullcalendar + '/fullcalendar-1.6.4/fullcalendar/fullcalendar.min.js')}" afterScriptsLoaded="{!c.afterScriptsLoaded}"/>   
+    
+    <ltng:require styles="{!join(',', 
+    					  $Resource.fullcalendar + '/fullcalendar-1.6.4/fullcalendar/fullcalendar.css', 
+                          $Resource.fullcalendar + '/fullcalendar-1.6.4/fullcalendar/fullcalendar.print.css')}"/>   
+    <!--<ltng:require scripts="{!$Resource.JobCalendarCommon}" />-->
+    
+    <aura:attribute name="events" type="Object[]" />
+   <!-- <aura:handler name="init" value="{!this}" action="{!c.LoadInitData}"/> -->
+    <body>
+	<div id='wrap' class="wrap">
+
+		<div id='external-events' class="externalevents">
+			<h4>Draggable Events</h4>
+			<div class='fc-event'>My Event 1</div>
+			<div class='fc-event'>My Event 2</div>
+			<div class='fc-event'>My Event 3</div>
+			<div class='fc-event'>My Event 4</div>
+			<div class='fc-event'>My Event 5</div>
+			<p>
+				<input type='checkbox' id='drop-remove' />
+				<label for='drop-remove'>remove after drop</label>
+			</p>
+		</div>
+
+		<div id='calendar'></div>
+
+		<div style='clear:both'></div>
+
+	</div>
+</body>
+</aura:component>

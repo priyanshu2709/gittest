@@ -1,0 +1,4 @@
+<aura:component implements="force:appHostable" access="global" >
+    <div aura:id="text">Hi Hello</div>
+    <ui:button label="Toggle" press="{!c.toggle}"/>
+</aura:component>

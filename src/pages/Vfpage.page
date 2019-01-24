@@ -1,0 +1,14 @@
+<apex:page controller="displayContacts" showChat="true">
+    <apex:pageBlock >
+     <apex:pageBlockSection title="Contacts Available">
+             <apex:dataTable value="{!conWrapper}" var="item1" border="1" columnsWidth="65px,100px" rowClasses="odd,even" styleClass="tableClass">
+             <apex:column width="200px">
+                     <table width="250" border="0">                       <tr><td><b>Name :</b></td><td>{!item1.contactName }</td></tr>                        
+                     <tr><td><b>Phone :</b></td><td>{!item1.phonec}</td></tr>                         
+                     <tr><td><b>Email :</b></td><td>{!item1.emailc} </td></tr>                        
+                     <tr><td><b>Created Date :</b></td><td>{!item1.createdDate} </td></tr>                     
+                     </table>               </apex:column> 
+             </apex:dataTable>
+     </apex:pageBlockSection>
+     </apex:pageBlock>
+ </apex:page>

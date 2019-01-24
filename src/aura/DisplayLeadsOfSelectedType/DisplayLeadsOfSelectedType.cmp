@@ -1,0 +1,49 @@
+<!--c:aeHandler-->
+<aura:component controller="displayleadstatus" >
+    <aura:attribute name="getleadtype" type="String"/>
+    <aura:attribute name="LeadList" type="Lead[]"/> 
+    <aura:handler event="c:EventDisplayTypeOfLead" action="{!c.myAction}"/>
+
+	
+    <!-- Display names of all accounts -->
+        <table class="slds-table slds-table--bordered slds-table--cell-buffer">
+          <thead>
+            <tr class="slds-text-title--caps">
+              <th scope="col">
+                <div class="slds-truncate" title="Opportunity Name">First Name</div>
+              </th>
+              <th scope="col">
+                <div class="slds-truncate" title="Account Name">Last Name</div>
+              </th>
+              <th scope="col">
+                <div class="slds-truncate" title="Close Date">Lead Status</div>
+              </th>
+              <th scope="col">
+                <div class="slds-truncate" title="Stage">Email</div>
+              </th>
+             </tr>
+           </thead>
+            <aura:iteration items="{!v.LeadList}" var="obj">
+            <tbody>
+    		<tr>
+              <th scope="row" >
+                <div class="slds-truncate">{!obj.FirstName}</div>
+              </th>
+                <th scope="row" >
+                <div class="slds-truncate">{!obj.LastName}</div>
+              </th>
+                <th scope="row" >
+                <div class="slds-truncate">{!obj.Status}</div>
+              </th>
+                <th scope="row" >
+                <div class="slds-truncate">{!obj.Email}</div>
+              </th>
+   			 </tr>
+          </tbody>
+           </aura:iteration>
+        </table>
+    
+ 
+
+    
+</aura:component>

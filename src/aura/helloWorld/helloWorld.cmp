@@ -1,0 +1,42 @@
+<aura:component implements="lightning:actionOverride,flexipage:availableForAllPageTypes,force:appHostable,forceCommunity:availableForAllPageTypes,lightning:isUrlAddressable">
+
+    <ltng:require
+         scripts="{!$Resource.jquery}"
+         afterScriptsLoaded="{!c.doInit}"
+    />
+    <aura:attribute name="today" type="Date" default=""/>
+    <h1 class="head">Hello Lightning Component!
+    
+    <div class="childdiv">
+    	Hello child div    
+    </div>
+    </h1> 
+     <!--<div class="demo-only" style="height: 6rem;">
+  <div role="status" class="slds-spinner slds-spinner_small slds-spinner_brand">
+    <span class="slds-assistive-text">Loading</span>
+    <div class="slds-spinner__dot-a"></div>
+    <div class="slds-spinner__dot-b"></div>
+  </div>
+</div>-->
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" description="Handler for valueInit event fired when the component has been initialised"/>
+    {!v.pageReference.state.testAttribute}
+    <lightning:navigation aura:id="navService"/>
+        <aura:attribute name="billingStates" access="public" type="String[]" default="{'1','2','3'}"/>
+    <aura:attribute name="lst1" type="string[]"/>
+    <aura:iteration items="{!v.billingStates}" var="option" indexVar="rowIndex">    
+        <lightning:select name="{!rowIndex}" label="How many tickets?" required="true" onchange="{!c.getValue}">
+            <option value="">choose one...</option>
+            <option value="1">one</option>
+            <option value="2">two</option>
+            <option value="3">three</option>
+        </lightning:select>
+    </aura:iteration>
+    <label class="slds-form-element__label" for="text-input-id-1">
+    Input Label<abbr class="slds-required" title="required">* </abbr></label>
+    <lightning:input class="slds-form--inline slds-required" name="Phone" label="Phone" aura:id="Phone" value="{!v.Phone}" variant="label-hidden"> 
+        
+    </lightning:input>
+    <p>Date: <input type="Date" id="datepicker" /></p>
+    <ui:inputDate aura:id="expdate" label="Today's Date" class="field" value="{!v.today}" displayDatePicker="true" />      
+    <button label="click" value="submit" onclick="{!c.clickme}">Submit</button>
+</aura:component>

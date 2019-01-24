@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SamlSsoConfig xmlns="http://soap.sforce.com/2006/04/metadata">
+    <identityLocation>SubjectNameId</identityLocation>
+    <identityMapping>Username</identityMapping>
+    <issuer>https://sts.windows.net/9784e74f-70da-43f3-917c-c4f1dddd9cda/</issuer>
+    <loginUrl>https://login.windows.net/9784e74f-70da-43f3-917c-c4f1dddd9cda/saml2</loginUrl>
+    <name>AzureSSO</name>
+    <oauthTokenEndpoint>https://lighteningcustomdomain-dev-ed.my.salesforce.com/services/oauth2/token?so=00D90000000lGW1</oauthTokenEndpoint>
+    <redirectBinding>true</redirectBinding>
+    <requestSignatureMethod>0</requestSignatureMethod>
+    <salesforceLoginUrl>https://lighteningcustomdomain-dev-ed.my.salesforce.com?so=00D90000000lGW1</salesforceLoginUrl>
+    <samlEntityId>https://lighteningcustomdomain-dev-ed.my.salesforce.com</samlEntityId>
+    <samlVersion>SAML2_0</samlVersion>
+    <userProvisioning>false</userProvisioning>
+    <validationCert>MIIC8DCCAdigAwIBAgIQLq/6svjiCbxJkjgLDzr0UzANBgkqhkiG9w0BAQsFADA0MTIwMAYDVQQDEylNaWNyb3NvZnQgQXp1cmUgRmVkZXJhdGVkIFNTTyBDZXJ0aWZpY2F0ZTAeFw0xNjA0MjIwNzQ1NThaFw0xODA0MjIwNzQ1NThaMDQxMjAwBgNVBAMTKU1pY3Jvc29mdCBBenVyZSBGZWRlcmF0ZWQgU1NPIENlcnRpZmljYXRlMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA+FFCc95gFjV06XL0zIlCtog/FczInJQj/kzA0qBn59bl5I2u7LGHswEvIOSpx01LF72nGHJWEkntG+1DJvrdRNLTaTLfj5r4XVyJ1UBGemA7NSgJzz/eX/1v0V9sMFhPUC7mz8hbqXiBmc4Z4AHO7kt11wCv5uymh3xFiyU7hdh7zm3g82Y8wjYsA3JeZlg7YI3tUZlVvYSX4Iw8R/uExD0CEDFpZ7Kc/0uUTTwgukNqIaxAED5PvL7LjUDbq1+hASaE3PSdjbg2M4JE9llgEgEqOBzA2ykx0pHCnHsefGupJ6jxFCNQvC2EI6UWF88rAuFEfILok/BlhMdN407V1wIDAQABMA0GCSqGSIb3DQEBCwUAA4IBAQBto7xHGKvsRPrV6+DlnFerEi7PGstDFLa6S4RxfcP5TNgGWLxYVVfWejt2oBWNj34I4PbtnsGRL48PoFsaWNC9s2qFJ8GRa0wSje9Zatz5lyEzZ8rWyoR1hs5WNrCRWpPQtOjyyZlkvTXtH7/WC9uTzoAzlCqqjOXUKWwElZ606P+JTCZH6arJP5BDm+7F4VQDHCK951tIeYK/fI1wzQeWSEwKizqrsW0d87nv7PC9XwhCqDWMXhRatLyLL8swCRuWEW9bNsN5F0gXp1aA7V2oIXPKga+Qg5aIyQuoS8uAJZ0DyZtyg7/7zvQil/yNs/AAMq4GmqxNclKSMlS8XoBL</validationCert>
+</SamlSsoConfig>

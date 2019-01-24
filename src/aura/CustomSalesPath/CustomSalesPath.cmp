@@ -1,0 +1,25 @@
+<aura:component >
+    <aura:attribute name="stageList" type="String[]" default="[]" />
+    <aura:attribute name="currentStage" type="String" default="" />
+    <div class="slds-grid">
+        <button class="slds-button slds-button--icon-border-filled slds-path__trigger slds-no-flex slds-m-horizontal--small" title="Open">
+            <lightning:icon iconName="utility:chevrondown" size="x-small" alternativeText="check"/>
+            <span class="slds-assistive-text">Open</span>
+        </button>
+        <div class="slds-tabs--path" role="application">
+            <ul class="slds-tabs--path__nav" role="tablist">
+                <aura:iteration items="{!v.stageList}" var="item">
+                    <li class="{!item == v.currentStage ? 'slds-tabs--path__item slds-is-current' : 'slds-tabs--path__item slds-is-incomplete'}" role="presentation">
+                        <a class="slds-tabs--path__link" id="tabs-path-451" aria-controls="content-path-1" aria-selected="false" tabindex="-1" role="tab" href="javascript:void(0);" aria-live="assertive">
+                            <span class="slds-tabs--path__stage">
+                                <lightning:icon iconName="utility:check" class="fillWhite" size="x-small" alternativeText="check"/>
+                            </span>
+                            <span class="slds-tabs--path__title">{!item}</span>
+                        </a>
+                    </li>
+                </aura:iteration>
+            </ul>
+        </div>
+        <button class="slds-button slds-button--brand slds-path__mark-complete slds-no-flex slds-m-horizontal--small">Change Closed State</button>
+    </div>
+</aura:component>

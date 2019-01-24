@@ -1,0 +1,103 @@
+<apex:page Controller="Transferopp" title=" Transfering Opportunities" id="M" >
+
+<apex:sectionHeader title="Bulk Opportunity Transfer" />
+
+<apex:form id="f" >
+
+    <apex:outputPanel id="o1"> 
+        <apex:pageMessages />
+    </apex:outputPanel>
+
+    <apex:pageBlock id="pg1"
+        helpTitle="Entering Criteria" 
+        helpUrl="/help/doc/en/reports_filter.htm">
+        
+        
+        <apex:pageBlockButtons >
+            <apex:commandButton title="Find" value="Find" action="{!doSearch}" rerender="o1,resultstable" />
+        </apex:pageBlockButtons>
+        
+        <apex:outputPanel >
+        <apex:pageBlockSection columns="3" id="UserSelection1" collapsible="true">
+            <apex:pageBlockSectionItem id="FromUser">
+                <apex:outputLabel >Transfer From User:</apex:outputLabel>
+                <apex:outputPanel id="fromuserBlock"> 
+                    <apex:outputPanel id="FromUserBlock_Active">
+                    
+                        <apex:inputField value="{!fromUserLookup.OwnerID}" id="oldOwner" required="false" />
+                    </apex:outputPanel>
+                    </apex:outputPanel>
+                    </apex:pageBlockSectionItem>
+                    
+                    
+                    <apex:pageBlockSectionItem id="ToUser1">
+                <apex:outputLabel >Transfer To User:</apex:outputLabel>
+                <apex:inputField value="{!toUserLookup.OwnerID}" required="false" id="newOwner1" />
+            </apex:pageBlockSectionItem>
+
+           </apex:pageBlockSection>
+           </apex:outputPanel>
+           
+           
+      <apex:pageBlockSection columns="2" title="Transfer"  id="pgs2">
+            <apex:pageBlockSectionItem id="OptioneMail">
+                <apex:inputCheckbox Value="{!optSendeMailToOwner}" id="optSendeMail" title="Send eMail" />
+                <apex:outputText >Send an E-mail to New Owner</apex:outputText>
+            </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+
+        
+        <apex:outputPanel id="Results" layout="block">
+        <apex:pageBlock id="resultsBlock">
+        <apex:pageBlockButtons location="Top">
+            <apex:commandButton title="Transfer Selected" value="Transfer Selected" action="{!doTransfer}" />
+        </apex:pageBlockButtons>
+            <apex:pageBlockTable value="{!searchResults}" var="Results" id="resultstable">
+            
+                <apex:facet name="caption"></apex:facet>
+                <apex:facet name="header"></apex:facet>
+                <apex:column >
+                    <apex:facet name="header"><apex:inputCheckbox id="selectall" selected="false"
+                        onclick="javascript:customSelectAllOrNoneByCheckbox(document.forms['M:f'],'M:f:resultsBlock:resultsDataTable:', this);"/></apex:facet>
+                    <apex:inputCheckbox value="{!Results.selected}" id="selected" />
+                </apex:column>
+                <apex:column >
+                    <apex:facet name="header">Name</apex:facet>
+                    
+                    <apex:outputLink target="_blank" value="{!Results.opportunity.ID}" > {!Results.opportunity.name}</apex:outputLink>
+                </apex:column>
+                
+                <apex:column >
+                    <apex:facet name="header">Owner</apex:facet>
+                    <apex:outputField value="{!Results.opportunity.owner.name}"/>
+                </apex:column>
+                
+            </apex:pageBlockTable>
+     </apex:pageBlock>
+     </apex:outputPanel>
+     </apex:pageBlock>
+     </apex:form>   
+     
+              
+         
+           <script>
+               
+      function customSelectAllOrNoneByCheckbox(form, element_name, control)
+{  
+customSelectChecked(form, element_name, control.checked); 
+}
+
+function customSelectChecked(form, element_name, value)
+{
+    var i = 0;
+    for (i = 0; i < form.elements.length; i++) {
+        if (form.elements[i].name.search('selected') > 0 && form.elements[i].disabled == false) 
+        {
+            form.elements[i].checked = value;
+        }
+    }
+}
+
+</script>     
+
+ </apex:page>

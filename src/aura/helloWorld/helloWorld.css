@@ -1,0 +1,14 @@
+.THIS.head{
+	    color: blue;
+}
+.THIS .childdiv
+{
+    color:green;
+}
+.THIS .slds-datepicker {
+    position: relative!important;
+    transform: scale(1);
+    top: 0px!important;
+    left: 0px!important;
+    transform-origin: 0 0;
+}

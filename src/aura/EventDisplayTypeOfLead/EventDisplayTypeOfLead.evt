@@ -1,0 +1,3 @@
+<aura:event type="APPLICATION" description="Lead Type Event template">
+	<aura:attribute name="LeadType" type="String"/>
+</aura:event>

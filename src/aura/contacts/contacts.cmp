@@ -1,0 +1,45 @@
+<aura:component controller="contactscontroller" implements="force:appHostable" access="global" >
+    <ltng:require styles="/resource/SLDS105/assets/styles/salesforce-lightning-design-system.min.css"/>
+    <aura:attribute name="contacts" type="Contact[]"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <div class="slds-m-top--xx-large">
+    <table class="slds-table slds-table--bordered slds-table--cell-buffer">
+      <thead>
+        <tr class="slds-text-title--caps">
+          <th scope="col">
+            <div class="slds-truncate" title="Opportunity Name">Contact Name</div>
+          </th>
+          <th scope="col">
+            <div class="slds-truncate" title="Account Name">Account Name</div>
+          </th>
+          <th scope="col">
+            <div class="slds-truncate" title="Close Date">Email</div>
+          </th>
+          <th scope="col">
+            <div class="slds-truncate" title="Stage">Phone</div>
+          </th>
+        
+        </tr>
+          <aura:iteration items="{!v.contacts}" var="s">
+        
+              <tr>
+                  <td >
+                    <div class="slds-truncate" > {!s.Name}</div>
+                  </td>
+                 <td >
+                    <div class="slds-truncate" > {!s.Account.Name}</div>
+                  </td>
+                  <td >
+                    <div class="slds-truncate" > {!s.Email}</div>
+                  </td>
+                  <td >
+                    <div class="slds-truncate" > {!s.Phone}</div>
+                  </td>
+              </tr>
+          </aura:iteration>
+      </thead>
+    </table>
+        
+    
+    </div>
+</aura:component>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Case Attribute</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Case Attribute</value>
+    </caseValues>
+    <fields>
+        <label><!-- Case --></label>
+        <name>Case__c</name>
+        <relationshipLabel><!-- Case Attribute --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Current Value --></label>
+        <name>Current_Value__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date Value --></label>
+        <name>Date_Value__c</name>
+    </fields>
+    <fields>
+        <label><!-- FieldUnique --></label>
+        <name>FieldUnique__c</name>
+    </fields>
+    <fields>
+        <label><!-- Initial Value --></label>
+        <name>Initial_Value__c</name>
+    </fields>
+    <fields>
+        <label><!-- Number Value --></label>
+        <name>Number_Value__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity --></label>
+        <name>Opportunity__c</name>
+        <relationshipLabel><!-- Case Attribute --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- String Value --></label>
+        <name>String_Value__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

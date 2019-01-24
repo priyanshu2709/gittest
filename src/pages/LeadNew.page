@@ -1,0 +1,12 @@
+<apex:page standardController="Lead" extensions="LeadController">
+  <apex:form >
+      <apex:pageBlock >
+          <apex:pageBlockSection >
+              <apex:inputfield value="{!objLead.firstname}"/>
+              <apex:inputfield value="{!objLead.LastName}"/>
+              <apex:inputfield value="{!objLead.Phone}"/>
+              <apex:inputfield value="{!objLead.Email}"/>
+          </apex:pageBlockSection>
+      </apex:pageBlock>
+  </apex:form>
+</apex:page>

@@ -1,0 +1,22 @@
+<aura:component >
+    <aura:attribute name="options" type="string[]" default="{option1,option2}"/>
+	<table>
+        <tr>
+            <td>
+                column 1
+            </td>
+            <td>
+            	column 2
+            </td>
+        </tr>
+        <tr>
+        <aura:iteration items="{!v.options}" var="o">
+            
+                <td>
+                	{!o}
+                </td>
+            
+        </aura:iteration>
+            </tr>
+    </table>
+</aura:component>

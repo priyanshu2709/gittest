@@ -1,0 +1,10 @@
+<aura:component implements="force:appHostable" >
+    <ltng:require styles="/resource/bootstrap/html/css/style.css"/>
+    <ltng:require styles="/resource/bootstrap/html/css/bootstrap.min.css"/>
+	<aura:attribute name="text" type="String" default="Just a string. Waiting for change."/>
+    <input type="button" class="button" value="Flawed HTML Button" click="alert('test')"/>
+    <br/>
+    <ui:button label="Fremework Button" class="button" press="{!c.handleClick}"/>
+    <br/>
+    {!v.text}
+</aura:component>

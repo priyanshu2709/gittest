@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Error Framework</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Error Framework</value>
+    </caseValues>
+    <fields>
+        <label><!-- Description --></label>
+        <name>Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Error Summary --></label>
+        <name>Error_Summary__c</name>
+    </fields>
+    <fields>
+        <label><!-- Event Category --></label>
+        <name>Event_Category__c</name>
+        <picklistValues>
+            <masterLabel>Integration</masterLabel>
+            <translation><!-- Integration --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Event Code --></label>
+        <name>Event_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Method Name --></label>
+        <name>Method_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Object ID --></label>
+        <name>Object_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Object Name --></label>
+        <name>Object_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Processing Status --></label>
+        <name>Processing_Status__c</name>
+        <picklistValues>
+            <masterLabel>Completed</masterLabel>
+            <translation><!-- Completed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Skipped</masterLabel>
+            <translation><!-- Skipped --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Service --></label>
+        <name>Service__c</name>
+    </fields>
+    <fields>
+        <label><!-- Severity --></label>
+        <name>Severity__c</name>
+        <picklistValues>
+            <masterLabel>High</masterLabel>
+            <translation><!-- High --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Source Code Location --></label>
+        <name>Source_Code_Location__c</name>
+    </fields>
+    <fields>
+        <label><!-- User --></label>
+        <name>User__c</name>
+        <relationshipLabel><!-- Error Framework --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- WCIS Last Call Status --></label>
+        <name>WCIS_Last_Call_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- WCIS Last Call Time --></label>
+        <name>WCIS_Last_Call_Time__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

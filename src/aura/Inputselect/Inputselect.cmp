@@ -1,0 +1,9 @@
+<aura:component >
+    <aura:attribute name="options" type="string[]" default="{option1,option2}"/>
+    <aura:handler name="init" value="{!this}" action="{!c.myAction}"/>
+    <ui:inputselect >
+    	<aura:iteration items="{!v.options}" var="op">
+            <ui:inputSelectOption value="{!op}"/>
+        </aura:iteration>
+    </ui:inputselect>
+</aura:component>

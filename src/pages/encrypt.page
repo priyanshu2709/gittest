@@ -1,0 +1,11 @@
+<apex:page standardController="EnCrypt_Decrypt__c" extensions="EncryptExtensioncls">
+    <apex:form >
+        <apex:pageBlock >
+            <apex:pageBlockSection >
+                <apex:inputField value="{!encrypt.Name}"/>
+                <apex:commandButton value="Save" action="{!Save}"/>
+                <apex:commandButton value="Update" action="{!test}"/>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form> 
+</apex:page>

@@ -1,0 +1,30 @@
+<aura:component controller="ApexServerSidecontroller1" implements="force:appHostable" >
+    <aura:attribute name="NewLead" type="Lead" default="{ 'sobjectType': 'Lead',}"/>
+    <ltng:require styles="/resource/SLDS105/assets/styles/salesforce-lightning-design-system.min.css"/>
+    
+        <div class="container">
+		 <form class="slds-form--stacked">
+			 <div class="slds-form-element slds-is-required">
+				 <div class="slds-form-element__control">
+                    <div class="slds-grid">
+                        <div class="slds-col">
+                        <ui:inputText aura:id="Fname" label="First Name" class="slds-input"
+                         labelClass="slds-form-element__label" value="{!v.NewLead.FirstName}"/>
+                        <ui:inputText aura:id="Lname" label="Last Name" class="slds-input"
+                         labelClass="slds-form-element__label" value="{!v.NewLead.LastName}" required="true"/>
+                     </div>
+                        <div class="slds-col">
+                     <ui:inputText aura:id="Compname" label="Company Name" class="slds-input"
+                     labelClass="slds-form-element__label" value="{!v.NewLead.Company}" required="true"/>
+                     <ui:inputText aura:id="Email" label="Email" class="slds-input"
+                     labelClass="slds-form-element__label" value="{!v.NewLead.Email}" />
+                        </div>
+                     </div>
+                 </div>
+             </div>
+             <ui:button label="Submit"
+				  class="slds-button slds-button--neutral" labelClass="label"
+					press="{!c.createLead}"/>
+        </form>
+    </div>
+</aura:component>

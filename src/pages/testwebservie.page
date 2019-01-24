@@ -1,0 +1,16 @@
+<apex:page standardController="Account">
+<apex:includeScript value="/soap/ajax/30.0/connection.js"/>
+<apex:includeScript value="/soap/ajax/30.0/apex.js"/>
+    <script>
+    window.onload = sayHelloService;
+    alert('test');
+    function sayHelloService(){
+                alert("{!Account.id}");
+                var accid = "{!Account.id}";
+                sforce.connection.sessionId = "{!$Api.Session_ID}";
+                  var hello = sforce.apex.execute("WSReturn", "Hello", {name:accid}); 
+                  sforce.debug.log(hello);
+               }
+     </script>
+     
+</apex:page>

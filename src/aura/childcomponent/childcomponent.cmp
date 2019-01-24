@@ -1,0 +1,5 @@
+<!--c:childcomponent-->
+<aura:component >
+    <aura:registerEvent name="bubblingEvent" type="c:customcompevent" />
+    <ui:button press="{!c.fireEvent}" label="Start Bubbling"/>
+</aura:component>

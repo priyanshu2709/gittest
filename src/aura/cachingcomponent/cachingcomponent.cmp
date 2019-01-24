@@ -1,0 +1,11 @@
+<aura:component isTemplate="true" extends="aura:template">
+    <aura:attribute name="loadLead" type="Lead[]"/>
+    <aura:handler name="init" value="{!this}" action="{!c.init}"/>
+    <aura:set attribute="auraPreInitBlock">
+        <!-- Note that the maxSize attribute in <auraStorage:init> is in KB -->
+        <auraStorage:init name="actions"
+          persistent="false"
+          secure="true"
+          maxSize="1024" />
+    </aura:set>
+</aura:component>

@@ -1,0 +1,26 @@
+<aura:component implements="flexipage:availableForAllPageTypes" access="global" >
+     <aura:handler name="init" value="{!this}" action="{!c.myAction}"/>
+    <aura:attribute name="disp" type="boolean"/>
+    <aura:attribute name="inputN" type="string" /> 
+    <aura:attribute name="inputLName" type="string" />
+   <div class="firstdiv">
+        <ui:inputText label="Enter First Name" value="{!v.inputN}"/>
+        <ui:inputText label="Enter Last Name" value="{!v.inputLName}"/>
+    </div>
+    {!v.disp}
+    <aura:if isTrue="{!v.disp}">
+    	<div>
+            if block displayed
+        </div>
+        <aura:set attribute="else">
+        	<div>
+                else div displayed
+            </div>
+        </aura:set>
+    </aura:if>
+    
+    <div class="{!v.disp==True?'firstdiv':'seconddiv'}">
+        another if else example
+    </div>
+    <c:helloWorld ></c:helloWorld>
+</aura:component>

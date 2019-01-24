@@ -1,0 +1,47 @@
+<aura:component controller="contactscontroller" implements="force:appHostable" access="global" >
+    <ltng:require styles="/resource/bootstrap/html/css/style.css"/>
+    <ltng:require styles="/resource/bootstrap/html/css/bootstrap.min.css"/>
+    <aura:attribute name="contacts" type="Contact[]"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <div class="container">
+        <div class="table-responsive">
+    <table class="table">
+      <thead>
+        <tr class="">
+          <th >
+            <div >Contact Name</div>
+          </th>
+          <th >
+            <div >Account Name</div>
+          </th>
+          <th>
+            <div>Email</div>
+          </th>
+          <th >
+            <div >Phone</div>
+          </th>
+        
+        </tr>
+          <aura:iteration items="{!v.contacts}" var="s">
+        
+              <tr>
+                  <td >
+                    <div> {!s.Name}</div>
+                  </td>
+                 <td >
+                    <div > {!s.Account.Name}</div>
+                  </td>
+                  <td >
+                    <div  > {!s.Email}</div>
+                  </td>
+                  <td >
+                    <div > {!s.Phone}</div>
+                  </td>
+              </tr>
+          </aura:iteration>
+      </thead>
+    </table>
+        </div>
+    
+    </div>
+</aura:component>

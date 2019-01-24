@@ -1,0 +1,103 @@
+<aura:component controller="contactscontroller" implements="force:appHostable" access="global" >
+    <ltng:require styles="/resource/SLDS105/assets/styles/salesforce-lightning-design-system.min.css"/>
+    <aura:attribute name="Accounts" type="Account[]"/>
+    <aura:attribute name="acc" type="Account" default="{ 'sobjectType': 'Account' }"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <lightning:buttonIcon iconName="utility:add" class="slds-float_right" onclick="{!c.showModal}" size="medium" alternativeText="Insert a record"/>
+    <aura:handler event="force:refreshView" action="{!c.doInit}" />
+     <force:outputField aura:id="accountLookupOutput" value="{!v.acc.Name}" class="slds-hide"></force:outputField>  
+    <force:outputField aura:id="accountLoo" value="{!v.acc.Priyank__Active__c}" class="slds-hide"></force:outputField>  
+    <div class="slds-hide" aura:id="mySpinner">
+        <lightning:spinner />
+    </div>
+
+    <div class="slds">
+    <table class="slds-table slds-table--bordered slds-table--cell-buffer">
+      <thead>
+        <tr class="slds-text-title--caps">
+          <th scope="col">
+            <div class="slds-truncate" title="Account Name">Account Name</div>
+          </th>
+          <th scope="col">
+            <div class="slds-truncate" title="Id">Id</div>
+          </th>
+          <th scope="col">
+            <div class="slds-truncate" title="Billing City">Billing City</div>
+          </th>
+          <th scope="col">
+            <div class="slds-truncate" title="Action">Action</div>
+          </th>
+            <th scope="col">
+            <div class="slds-truncate" title="Delete">Delete</div>
+          </th>
+        </tr>
+          <aura:iteration items="{!v.Accounts}" var="s">
+        
+              <tr>
+                  
+                 <td >
+                    <div class="slds-truncate" > {!s.Name}</div>
+                  </td>
+                  <td >
+                    <div class="slds-truncate" > {!s.Id}</div>
+                  </td>
+                  <td >
+                    <div class="slds-truncate" > {!s.BillingCity}</div>
+                  </td>
+                  <td >
+                      <!--<force:recordEdit aura:id="edit" recordId="{!s.Id}"/>-->
+                      <div class="slds-truncate" > <lightning:buttonIcon iconName="utility:edit" value="{!s.Id}" onclick="{!c.editRecord}" size="small" alternativeText="Indicates approval"/><!--<ui:button label="Find" labelClass="assistiveText" class="img" />--></div>
+                      <!--<lightning:icon iconName="action:add_file" alternativeText="Indicates approval"/>-->
+                  </td>
+                  <td >
+                      <!--<force:recordEdit aura:id="edit" recordId="{!s.Id}"/>-->
+                      <div class="slds-truncate" > <lightning:buttonIcon iconName="utility:delete" value="{!s}" onclick="{!c.deleteRecord}" size="small" alternativeText="Indicates approval"/><!--<ui:button label="Find" labelClass="assistiveText" class="img" />--></div>
+                      <!--<lightning:icon iconName="action:add_file" alternativeText="Indicates approval"/>-->
+                  </td>
+              </tr>
+          </aura:iteration>
+      </thead>
+    </table>
+        
+    
+    </div>
+    
+    <!--another popup modal-->
+    	<div class="demo-only slds-hide" style="height: 640px;" id="newClientSectionId">
+          <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+              <header class="slds-modal__header">
+                <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick="{!c.hideModal}">
+                  <lightning:buttonIcon iconName="utility:close" class="slds-float_right" size="medium" alternativeText="Close"/>
+                  <span class="slds-assistive-text">Close</span>
+                </button>
+                <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">Insert New Account</h2>
+              </header>
+                  <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                  <label class="slds-form-element__label" for="input-id-01">Account Name</label>
+                <force:inputField aura:id="AccountName" class="slds-input" value="{!v.acc.Name}"/>
+                  <label class="slds-form-element__label" for="input-id-02">Active</label>
+                <force:inputField aura:id="AccountActive" class="slds-input" value="{!v.acc.Priyank__Active__c}"/>
+              </div>
+              <footer class="slds-modal__footer">
+                <button class="slds-button slds-button--neutral" onclick="{!c.hideModal}">Cancel</button>
+                <button class="slds-button slds-button--brand" onclick="{!c.insertAcc}">Save</button>
+              </footer>
+            </div>
+          </section>
+          <div class="slds-backdrop slds-backdrop--open"></div>
+        </div>
+    <!--Ends here another popup modal-->
+    <div class="slds-backdrop slds-backdrop--hide" aura:id="backdrop">
+		
+    
+    	<h1>Insert New Account</h1>
+        <label class="slds-form-element__label" for="text-input-id-1">Input Label</label>
+  		<div class="slds-form-element__control">
+    		<input type="text" id="text-input-id-1" class="slds-input" placeholder="Placeholder Text">
+            </input>
+        </div>
+    	
+	</div>
+    <button class="slds-button slds-button--neutral" onclick="{!c.showSpinner}">Show spinner</button>
+</aura:component>

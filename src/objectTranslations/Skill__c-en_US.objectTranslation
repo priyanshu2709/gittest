@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Skill</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Skills</value>
+    </caseValues>
+    <fields>
+        <label><!-- Category --></label>
+        <name>Category__c</name>
+        <picklistValues>
+            <masterLabel>APIs</masterLabel>
+            <translation><!-- APIs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>General</masterLabel>
+            <translation><!-- General --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Languages</masterLabel>
+            <translation><!-- Languages --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Notes --></label>
+        <name>Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rating --></label>
+        <name>Rating__c</name>
+        <picklistValues>
+            <masterLabel>0 - None</masterLabel>
+            <translation><!-- 0 - None --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1 - Minimal</masterLabel>
+            <translation><!-- 1 - Minimal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2 - Below Average</masterLabel>
+            <translation><!-- 2 - Below Average --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3 - Average</masterLabel>
+            <translation><!-- 3 - Average --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4 - Above Average</masterLabel>
+            <translation><!-- 4 - Above Average --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5 - Expert</masterLabel>
+            <translation><!-- 5 - Expert --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Resource --></label>
+        <name>Resource__c</name>
+        <relationshipLabel><!-- Skills --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Type --></label>
+        <name>Type__c</name>
+        <picklistValues>
+            <masterLabel>Amazon Web Services</masterLabel>
+            <translation><!-- Amazon Web Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Apex</masterLabel>
+            <translation><!-- Apex --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Application Design</masterLabel>
+            <translation><!-- Application Design --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>C#</masterLabel>
+            <translation><!-- C# --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Data Modeling</masterLabel>
+            <translation><!-- Data Modeling --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Documentation</masterLabel>
+            <translation><!-- Documentation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Facebook</masterLabel>
+            <translation><!-- Facebook --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GUI Design</masterLabel>
+            <translation><!-- GUI Design --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Google Data</masterLabel>
+            <translation><!-- Google Data --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Java</masterLabel>
+            <translation><!-- Java --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PHP</masterLabel>
+            <translation><!-- PHP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Perl</masterLabel>
+            <translation><!-- Perl --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Project Management</masterLabel>
+            <translation><!-- Project Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ruby</masterLabel>
+            <translation><!-- Ruby --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Training</masterLabel>
+            <translation><!-- Training --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
+        <layout>Skill Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Type must contain a value --></errorMessage>
+        <name>Type</name>
+    </validationRules>
+</CustomObjectTranslation>

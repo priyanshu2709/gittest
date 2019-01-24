@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>A skill held by a consultant that can be measured, or required for a project</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Category__c</fullName>
+        <description>Category that this skill belongs to</description>
+        <externalId>false</externalId>
+        <label>Category</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>General</fullName>
+                    <default>false</default>
+                    <label>General</label>
+                </value>
+                <value>
+                    <fullName>Languages</fullName>
+                    <default>false</default>
+                    <label>Languages</label>
+                </value>
+                <value>
+                    <fullName>APIs</fullName>
+                    <default>false</default>
+                    <label>APIs</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Notes__c</fullName>
+        <description>Additional detail to back up the rating</description>
+        <externalId>false</externalId>
+        <label>Notes</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Rating__c</fullName>
+        <description>On a scale of 0 (none) to 5 (expert), proficiency of associated Resource in this skill</description>
+        <externalId>false</externalId>
+        <label>Rating</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>0 - None</fullName>
+                    <default>true</default>
+                    <label>0 - None</label>
+                </value>
+                <value>
+                    <fullName>1 - Minimal</fullName>
+                    <default>false</default>
+                    <label>1 - Minimal</label>
+                </value>
+                <value>
+                    <fullName>2 - Below Average</fullName>
+                    <default>false</default>
+                    <label>2 - Below Average</label>
+                </value>
+                <value>
+                    <fullName>3 - Average</fullName>
+                    <default>false</default>
+                    <label>3 - Average</label>
+                </value>
+                <value>
+                    <fullName>4 - Above Average</fullName>
+                    <default>false</default>
+                    <label>4 - Above Average</label>
+                </value>
+                <value>
+                    <fullName>5 - Expert</fullName>
+                    <default>false</default>
+                    <label>5 - Expert</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Resource__c</fullName>
+        <externalId>false</externalId>
+        <label>Resource</label>
+        <referenceTo>Resource__c</referenceTo>
+        <relationshipLabel>Skills</relationshipLabel>
+        <relationshipName>Skills</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Type__c</fullName>
+        <description>Name of the skill</description>
+        <externalId>false</externalId>
+        <label>Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>Category__c</controllingField>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Amazon Web Services</fullName>
+                    <default>false</default>
+                    <label>Amazon Web Services</label>
+                </value>
+                <value>
+                    <fullName>Apex</fullName>
+                    <default>false</default>
+                    <label>Apex</label>
+                </value>
+                <value>
+                    <fullName>Application Design</fullName>
+                    <default>false</default>
+                    <label>Application Design</label>
+                </value>
+                <value>
+                    <fullName>C#</fullName>
+                    <default>false</default>
+                    <label>C#</label>
+                </value>
+                <value>
+                    <fullName>Data Modeling</fullName>
+                    <default>false</default>
+                    <label>Data Modeling</label>
+                </value>
+                <value>
+                    <fullName>Documentation</fullName>
+                    <default>false</default>
+                    <label>Documentation</label>
+                </value>
+                <value>
+                    <fullName>Facebook</fullName>
+                    <default>false</default>
+                    <label>Facebook</label>
+                </value>
+                <value>
+                    <fullName>Google Data</fullName>
+                    <default>false</default>
+                    <label>Google Data</label>
+                </value>
+                <value>
+                    <fullName>GUI Design</fullName>
+                    <default>false</default>
+                    <label>GUI Design</label>
+                </value>
+                <value>
+                    <fullName>Java</fullName>
+                    <default>false</default>
+                    <label>Java</label>
+                </value>
+                <value>
+                    <fullName>Perl</fullName>
+                    <default>false</default>
+                    <label>Perl</label>
+                </value>
+                <value>
+                    <fullName>PHP</fullName>
+                    <default>false</default>
+                    <label>PHP</label>
+                </value>
+                <value>
+                    <fullName>Project Management</fullName>
+                    <default>false</default>
+                    <label>Project Management</label>
+                </value>
+                <value>
+                    <fullName>Ruby</fullName>
+                    <default>false</default>
+                    <label>Ruby</label>
+                </value>
+                <value>
+                    <fullName>Training</fullName>
+                    <default>false</default>
+                    <label>Training</label>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>General</controllingFieldValue>
+                <valueName>Application Design</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>General</controllingFieldValue>
+                <valueName>Data Modeling</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>General</controllingFieldValue>
+                <valueName>Documentation</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>General</controllingFieldValue>
+                <valueName>GUI Design</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>General</controllingFieldValue>
+                <valueName>Project Management</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>General</controllingFieldValue>
+                <valueName>Training</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Languages</controllingFieldValue>
+                <valueName>Apex</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Languages</controllingFieldValue>
+                <valueName>C#</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Languages</controllingFieldValue>
+                <valueName>Java</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Languages</controllingFieldValue>
+                <valueName>Perl</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Languages</controllingFieldValue>
+                <valueName>PHP</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Languages</controllingFieldValue>
+                <valueName>Ruby</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>APIs</controllingFieldValue>
+                <valueName>Amazon Web Services</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>APIs</controllingFieldValue>
+                <valueName>Facebook</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>APIs</controllingFieldValue>
+                <valueName>Google Data</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <label>Skill</label>
+    <nameField>
+        <displayFormat>Skill-{00000}</displayFormat>
+        <label>Skill Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Skills</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Category__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Type__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Rating__c</customTabListAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>Type</fullName>
+        <active>true</active>
+        <description>Skill Type must not be empty</description>
+        <errorConditionFormula>ISPICKVAL(Type__c, &apos;&apos;)</errorConditionFormula>
+        <errorMessage>Type must contain a value</errorMessage>
+    </validationRules>
+    <visibility>Public</visibility>
+</CustomObject>

@@ -1,0 +1,20 @@
+.THIS {
+		margin-top: 40px;
+		text-align: center;
+		font-size: 14px;
+		font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif;
+	
+}
+.THIS.wrap{
+    width: 1100px;
+		margin: 0 auto;
+    
+}
+.THIS.externalevents {
+		float: left;
+		width: 150px;
+		padding: 0 10px;
+		border: 1px solid #ccc;
+		background: #eee;
+		text-align: left;
+	}

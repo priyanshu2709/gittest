@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>TFC_05</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>TFC_05</value>
+    </caseValues>
+    <fields>
+        <label><!-- TFC4 Name --></label>
+        <name>TFC4_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- TFC Base --></label>
+        <name>TFC_Base__c</name>
+        <relationshipLabel><!-- TFC_05 --></relationshipLabel>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,8 @@
+<!--c:super-->
+<aura:component extensible="true">
+    <aura:attribute name="description" type="String" default="Default description" />
+
+    <p>super.cmp description: {!v.description}</p>
+
+    {!v.body}
+</aura:component>

@@ -1,0 +1,211 @@
+<apex:page showheader="true" docType="html-5.0" applyBodyTag="false" standardStylesheets="false" controller="maplocationcheck">
+  <apex:form >
+  <head>
+    
+    <title>Polygon arrays</title>
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+  background: #222;
+}
+
+h3 {
+  margin: 4px 0;
+  padding: 5px 0;
+  font-family: arial, sans-serif;
+  width: 100%;
+  color: #fff;
+}
+h3 a {
+  color: #00B2EE;
+  text-decoration: none;
+}
+h3 a:hover {
+  color: #55d4ff;
+}
+
+#map-canvas {
+  width: auto;
+  height: 500px;
+}
+
+#info {
+  color: #222;
+}
+
+.lngLat {
+  color: #fff;
+  margin-bottom: 5px;
+}
+.lngLat .one {
+  padding-left: 250px;
+}
+.lngLat .two {
+  padding-left: 34px;
+}
+
+#clipboard-btn {
+  float: left;
+  margin-right: 10px;
+  padding: 6px 8px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+}
+
+#info {
+  height: 140px;
+  float: left;
+  margin-bottom: 30px;
+  border: solid 2px #eee;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  -moz-box-shadow: inset 0 2px 5px #444;
+  -webkit-box-shadow: inset 0 2px 5px #444;
+  box-shadow: inset 0 2px 5px #444;
+}
+
+#info, .lngLat {
+  font-family: arial, sans-serif;
+  font-size: 12px;
+  padding-top: 10px;
+  width: 270px;
+}
+
+    </style>
+  </head>
+   
+  <body>
+     <table>
+     <tr>
+     <td>
+    <div id="floating-panel">
+       Last Name:<apex:inputField value="{!objLead.LastName}"/>
+      Company:<apex:inputField value="{!objLead.Company}"/>
+      Lead Status:<apex:inputField value="{!objLead.status}"/>
+      Address:
+      <input id="address" type="textbox" value="Scottsdale"/>
+      <input id="submit" type="button" value="Geocode"/>
+    </div>
+    </td>
+    <td>
+    <div id="map" style="width: 500px; height: 500px"></div>
+    </td>
+    </tr>
+    </table>
+    <apex:actionFunction action="{!insertLead}" name="insertLead"/>
+    <script>
+      // This example requires the Geometry library. Include the libraries=geometry
+      // parameter when you first load the API. For example:
+      // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=geometry">
+
+      function initMap() {
+      var latlng = '';
+        var map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: 33.494170, lng: -111.926052},
+          zoom: 5,
+        });
+        var geocoder = new google.maps.Geocoder();
+        var triangleCoords = [
+          {lat: 33.51908,lng: -111.92605}, 
+          {lat: 33.47871,lng: -111.9827}, 
+          {lat: 33.47728,lng: -111.87696}
+        ];
+        var bermudaTriangle = new google.maps.Polygon({paths: triangleCoords});
+        // Styling & Controls
+        var myPolygon = new google.maps.Polygon({
+        paths: triangleCoords,
+        draggable: true, // turn off if it gets annoying
+        editable: true,
+        strokeColor: '#FF0000',
+        strokeOpacity: 0.8,
+        strokeWeight: 2,
+        fillColor: '#FF0000',
+        fillOpacity: 0.35
+      });
+      myPolygon.setMap(map);
+      var marker;
+        document.getElementById('submit').addEventListener('click', function() {
+                 
+          var resultsMap=map;
+             var address = document.getElementById('address').value;
+             
+                geocoder.geocode({'address': address}, function(results, status) {
+                  if (status === google.maps.GeocoderStatus.OK) {
+                    resultsMap.setCenter(results[0].geometry.location);
+                    console.log(results[0].geometry.location+'test');
+                    latlng = results[0].geometry.location;
+                    marker = new google.maps.Marker({
+                      map: resultsMap,
+                      position: results[0].geometry.location
+                    });
+                    console.log(marker.getPosition()+'marker');
+                  } else {
+                    alert('Geocode was not successful for the following reason: ' + status);
+                  }
+                });
+          
+          
+          if(google.maps.geometry.poly.containsLocation(marker.getPosition(), bermudaTriangle))
+              {
+                  alert('present in territory');
+                  resultColor ='red';
+              }
+              else
+              {
+                  resultColor ='black';
+                  alert('not present in territory');
+              }
+          //insertLead();
+        });
+        
+        
+  
+        google.maps.event.addListener(map, 'click', function(e) {
+          var resultColor ='';
+              if(google.maps.geometry.poly.containsLocation(e.latLng, bermudaTriangle))
+              {
+                  alert('true');
+                  resultColor ='red';
+              }
+              else
+              {
+                  resultColor ='black';
+              }
+              
+
+          new google.maps.Marker({
+            position: e.latLng,
+            map: map,
+            icon: {
+              path: google.maps.SymbolPath.CIRCLE,
+              fillColor: resultColor,
+              fillOpacity: .2,
+              strokeColor: 'white',
+              strokeWeight: .5,
+              scale: 10
+            }
+          });
+        });
+      }
+      
+      
+      function geocodeAddress(geocoder, resultsMap) {
+     
+      }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDj2iHGFcYTor_tOrx2xO96ceRaFX7BAoI&libraries=geometry&callback=initMap"></script>
+  </body>
+  </apex:form>
+</apex:page>

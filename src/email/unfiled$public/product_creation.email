@@ -1,0 +1,1 @@
+new product {!Product2.Name} has been added to warehouse and it is  created by {!Product2.CreatedBy}

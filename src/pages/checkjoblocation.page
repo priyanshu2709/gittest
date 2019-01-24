@@ -1,0 +1,61 @@
+<apex:page standardController="Job__c" extensions="PopulateJeo">
+    <apex:form > 
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDj2iHGFcYTor_tOrx2xO96ceRaFX7BAoI&libraries=geometry&callback=initMap"></script>
+    <apex:includeScript value="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"/>
+    
+    <script> 
+        function populategeo()
+        {
+            alert('called');
+            
+            
+            var address = $("[id$=street]").val()+','+ $("[id$=postcode]").val()+','+$("[id$=suburb]").val()+','+$("[id$=country]").val();
+            alert(address);
+           
+            getLatitudeLongitude(showResult, address);
+       }
+       
+       function showResult(result) {
+        document.getElementById('j_id0:j_id1:j_id5:j_id6:latitude').value = result.geometry.location.lat();
+        document.getElementById('j_id0:j_id1:j_id5:j_id6:longitude').value = result.geometry.location.lng();
+        
+        }
+        
+        function getLatitudeLongitude(callback, address) {
+            address = address;
+            // Initialize the Geocoder
+            geocoder = new google.maps.Geocoder();
+            if (geocoder) {
+                geocoder.geocode({
+                    'address': address
+                }, function (results, status) {
+                    if (status == google.maps.GeocoderStatus.OK) {
+                        callback(results[0]);
+                    }
+                });
+            }
+        }
+    </script>  
+        <apex:pageblock >
+            <apex:pageblockSection >
+            
+                
+                <apex:inputField value="{!objjob.Postcode__c}" id="postcode"/>
+                <apex:inputField value="{!objjob.State__c}" id="state"/>
+                <apex:inputField value="{!objjob.Street__c}" id="street"/>
+                <apex:inputField value="{!objjob.Suburb__c}" id="suburb"/>
+                <apex:inputField value="{!objjob.Country__c}" id="country" onblur="populategeo();"/>
+                
+               
+                    <apex:inputhidden value="{!objjob.Location__Latitude__s}" id="latitude"/>
+                
+                    <apex:inputhidden value="{!objjob.Location__Longitude__s}" id="longitude"/>
+                
+
+            
+            </apex:pageblockSection>
+        </apex:pageblock>
+         
+        <apex:commandbutton value="Save" action="{!gotorecord}"/>
+    </apex:form>
+</apex:page>

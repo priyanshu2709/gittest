@@ -1,0 +1,12 @@
+<aura:component controller="displayleadstatus">
+	<aura:registerEvent name="cmpEvent" type="c:ComponentEvent"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:attribute name="options" type="string[]"/>
+    <h1>Simple Component Event Sample</h1>
+	<p>
+        <ui:inputSelect label=" Lead Status" class="dynamic" aura:id="InputSelectDynamic"  required="true" change="{!c.fireComponentEvent}">
+        	<ui:inputSelectOption value="{!v.options}"/>
+        </ui:inputSelect>
+    </p>
+
+</aura:component>

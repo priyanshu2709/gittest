@@ -1,0 +1,11 @@
+<aura:component controller="displayleadstatus">
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:registerEvent name="appEvent" type="c:EventDisplayTypeOfLead"/>
+	<aura:attribute name="options" type="string[]"/>
+    <h1>Simple Application Event Sample</h1>
+    <p>
+        <ui:inputSelect label=" Lead Status" class="dynamic" aura:id="InputSelectDynamic"  required="true" change="{!c.showLead}">
+        	<ui:inputSelectOption value="{!v.options}"/>
+        </ui:inputSelect>
+    </p>
+</aura:component>

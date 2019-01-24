@@ -1,0 +1,6 @@
+<apex:page controller="UploadExcel">
+    <apex:form >
+        <apex:inputfile value="{!filevalue}"></apex:inputfile>
+        <apex:commandButton value="Save" action="{!InsertExcel}"/>
+    </apex:form>
+</apex:page>
